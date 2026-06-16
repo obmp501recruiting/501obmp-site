@@ -128,7 +128,16 @@ form button{
 }
 </style>
 </head>
+<script>
+function openForm() {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('forma').style.display = 'block';
+}
 
+function closeForm() {
+    document.getElementById('popup').style.display = 'none';
+}
+</script>
 <body>
 <nav style="background:#05111d;padding:15px;position:fixed;top:0;width:100%;z-index:1000;display:flex;justify-content:center;gap:30px;">
 <a href="#" style="color:white;text-decoration:none;">Головна</a>
@@ -152,7 +161,9 @@ onclick="document.getElementById('forma').style.display='block'">
 <input type="hidden" name="_subject" value="Нова заявка 501 ОБМП">
 ДОЛУЧИТИСЯ
 </a>
-
+<div id="popup" class="popup">
+<div class="popup-content">
+<span class="close" onclick="closeForm()">&times;</span>
 <form id="forma"
 action="https://formsubmit.co/obmp148@gmail.com"
 method="POST"
@@ -181,6 +192,7 @@ value="https://obmp148-sketch.github.io/501obmp-site/">
 </form>
 
 </form>
+</div>
 </div>
 </header>
  <section id="about">
@@ -285,9 +297,8 @@ value="https://obmp148-sketch.github.io/501obmp-site/">
 
 <p>З нами Бог і Перемога!</p>
 
-</footer>
-<a href="#contacts" class="join-btn">
-    ДОЛУЧИТИСЯ
+<a href="javascript:void(0)" class="join-btn" onclick="openForm()">
+ДОЛУЧИТИСЯ
 </a>
 </body>
 </html>
