@@ -749,26 +749,13 @@ popup.style.display="none";
 
     <h2 id="jobTitle"></h2>
 
-    <p id="jobDescription"></p>
-
+    <div id="jobDescription"></div>
     <button onclick="openForm()">Подати заявку</button>
   </div>
 </div>
 
 <script>
-function openJob(job){
-
-    document.getElementById("jobTitle").innerText =
-        vacancies[job].title;
-
-    document.getElementById("jobDescription").innerText =
-        vacancies[job].description;
-
-    document.getElementById("jobModal").style.display =
-        "block";
-}
-
-    const vacancies = {
+const vacancies = {
 
         "bpla": {
             title: "ОПЕРАТОР БПЛА",
@@ -862,19 +849,6 @@ function openJob(job){
             </ul>`
         }
     };
-
-    if(vacancies[job]){
-        document.getElementById("jobTitle").innerText =
-            vacancies[job].title;
-
-        document.getElementById("jobDescription").innerHTML =
-            vacancies[job].description;
-
-        document.getElementById("jobModal").style.display =
-            "block";
-    }
-}
-  
 
 function closeJob(){
     document.getElementById("jobModal").style.display = "none";
