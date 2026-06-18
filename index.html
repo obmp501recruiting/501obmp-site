@@ -181,19 +181,21 @@ color:#d4af37;
 }
 
 .cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
 }
 
 .card{
-background:rgba(16,36,53,.85);
-border:1px solid rgba(212,175,55,.3);
-border-radius:15px;
-padding:25px;
-text-align:center;
+    width:260px;
+    min-height:120px;
+    background:rgba(16,36,53,.85);
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
 }
-
 .card h3{
 color:#d4af37;
 margin-bottom:15px;
@@ -389,13 +391,22 @@ nav a{
 .modal-content{
     background:#102b45;
     color:white;
-    margin:10% auto;
-    padding:20px;
-    width:90%;
-    max-width:600px;
-    border-radius:10px;
+    margin:5% auto;
+    padding:30px;
+    width:80%;
+    max-width:800px;
+    border-radius:15px;
+}
+#jobTitle{
+    font-size:32px;
+    margin-bottom:20px;
+    color:#d4af37;
 }
 
+#jobDescription{
+    font-size:18px;
+    line-height:1.8;
+}
 .close{
     float:right;
     cursor:pointer;
@@ -549,23 +560,34 @@ onclick="openForm()">
     <p>Керування FPV-дронами та виконання завдань.</p>
 </div>
 <div class="card" onclick="openJob('driver')">
-<h3>ВОДІЙ</h3>
-    
+    <h3>ВОДІЙ</h3>
+    <p>Керування та обслуговування техніки.</p>
+</div>
+
 <div class="card" onclick="openJob('medic')">
-<h3>МЕДИК</h3>
+    <h3>МЕДИК</h3>
+    <p>Медичне забезпечення особового складу.</p>
+</div>
 
 <div class="card" onclick="openJob('rifleman')">
-<h3>СТРІЛЕЦЬ</h3>
+    <h3>СТРІЛЕЦЬ</h3>
+    <p>Виконання бойових завдань.</p>
+</div>
 
 <div class="card" onclick="openJob('mg')">
-<h3>КУЛЕМЕТНИК</h3>
+    <h3>КУЛЕМЕТНИК</h3>
+    <p>Вогнева підтримка підрозділу.</p>
+</div>
 
 <div class="card" onclick="openJob('grenadier')">
-<h3>ГРАНАТОМЕТНИК</h3>
+    <h3>ГРАНАТОМЕТНИК</h3>
+    <p>Застосування гранатометного озброєння.</p>
+</div>
 
-<div class="card" onclick="openJob('grenadier')">
-<h3>ГРАНАТОМЕТНИК</h3>
-
+<div class="card" onclick="openJob('signal')">
+    <h3>ЗВ'ЯЗКІВЕЦЬ</h3>
+    <p>Забезпечення зв'язку підрозділу.</p>
+</div>
 </div>
 
 </section>
@@ -741,69 +763,41 @@ function openJob(job){
 
     if(job === "fpv"){
         title = "Пілот FPV";
-        description = • Керування ударними FPV-дронами.
-• Ураження живої сили та техніки противника.
-• Підготовка дронів до бойових вильотів.
-• Робота в складі екіпажу БПЛА.
-• Досвід вітається, проводиться навчання.;
+        description = "Керування FPV-дронами, виконання бойових завдань, навчання надається.";
     }
 
     if(job === "bpla"){
         title = "Оператор БПЛА";
-        description =Проведення повітряної розвідки та спостереження.
-• Виявлення та супровід цілей противника.
-• Коригування артилерійського вогню.
-• Аналіз та передача розвідувальної інформації.
-• Навчання за рахунок підрозділу.;
-    } 
+        description = "Робота з безпілотними авіаційними комплексами, розвідка та коригування.";
+    }
 if(job === "driver"){
     title = "Водій";
-    description = Керування військовою технікою.
-• Перевезення особового складу та вантажів.
-• Контроль технічного стану автомобіля.
-• Виконання завдань у районі бойових дій.
-• Категорія B, C або CE.;
+    description = "Керування військовою технікою, перевезення особового складу та вантажів. Навчання надається.";
 }
 
 if(job === "medic"){
     title = "Медик";
-    description =• Надання домедичної допомоги.
-• Евакуація поранених.
-• Контроль медичного забезпечення.
-• Робота на стабілізаційних пунктах.
-• Медична освіта вітається.;
+    description = "Надання домедичної допомоги, евакуація поранених та медичний супровід підрозділу.";
 }
 
 if(job === "rifleman"){
     title = "Стрілець";
-    description = Виконання бойових завдань у складі підрозділу.
-• Оборона та штурмові дії.
-• Робота зі штатним озброєнням.
-• Підтримання бойової готовності.;
+    description = "Виконання бойових завдань у складі підрозділу морської піхоти.";
 }
 
 if(job === "mg"){
     title = "Кулеметник";
-    description =Вогнева підтримка підрозділу.
-• Ураження живої сили противника.
-• Обслуговування штатного кулемета.
-• Робота в складі бойової груп;
+    description = "Робота зі штатним кулеметним озброєнням та вогнева підтримка підрозділу.";
 }
 
 if(job === "grenadier"){
     title = "Гранатометник";
-    description =• Застосування гранатометного озброєння.
-• Ураження техніки та укріплень противника.
-• Обслуговування та підготовка озброєння.
-• Виконання бойових завдань у складі підрозділу.;
+    description = "Застосування гранатометного озброєння та підтримка штурмових груп.";
 }
 
 if(job === "signal"){
     title = "Зв'язківець";
-    description = • Забезпечення стійкого зв’язку підрозділу.
-• Налаштування радіостанцій та обладнання.
-• Розгортання засобів зв’язку.
-• Контроль роботи мереж зв’язку.;
+    description = "Забезпечення стабільного зв'язку підрозділу та робота із засобами радіозв'язку.";
 }
     document.getElementById("jobTitle").innerText = title;
     document.getElementById("jobDescription").innerText = description;
