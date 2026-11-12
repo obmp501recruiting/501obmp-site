@@ -1060,7 +1060,11 @@ const CRM_WEBAPP_URL="https://script.google.com/macros/s/AKfycbzmd4zecZplz1b086P
 
 // sendBeacon survives the page navigation that the formsubmit.co submit triggers
 function sendToCrm(form){
-navigator.sendBeacon(CRM_WEBAPP_URL,new URLSearchParams(new FormData(form)));
+const data=new URLSearchParams(new FormData(form));
+new URLSearchParams(location.search).forEach((value,key)=>{
+if(key.startsWith("utm_")) data.append(key,value);
+});
+navigator.sendBeacon(CRM_WEBAPP_URL,data);
 }
 
 window.onclick=function(event){
